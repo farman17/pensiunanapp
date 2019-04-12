@@ -47,6 +47,11 @@ class Auth extends CI_Controller {
         }
     }
 
+    public function forbidden()
+    {
+        $this->load->view('auth/403');
+    }
+    
     public function logout()
     {
         $this->session->unset_userdata('username');
