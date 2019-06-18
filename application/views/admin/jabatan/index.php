@@ -28,7 +28,7 @@
                                     <?php endif; ?>
 
                                     <div class="table-responsive">
-                                        <table id="order-listing" class="table">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                             <tr>
                                                 <th>No</th>

@@ -29,6 +29,7 @@
 
 //require_once 'PEAR.php';
 require_once 'oleread.inc.php';
+// $this->load->library('oleread.inc');
 //require_once 'OLE.php';
 
 define('SPREADSHEET_EXCEL_READER_BIFF8',             0x600);
@@ -102,6 +103,8 @@ define('SPREADSHEET_EXCEL_READER_DEF_NUM_FORMAT',    "%s");
 */
 class Excel_reader
 {
+
+    function __construct(){	}
     /**
      * Array of worksheets found
      *
@@ -372,7 +375,7 @@ class Excel_reader
             }
             //var_dump(strlen($ole->getData($i, 0, $ole->getDataLength($i))), $pps->Name, md5($this->data), $ole->getDataLength($i));
         }
-//exit;
+    //exit;
         $this->_parse();
 
         return sizeof($this->sheets) > 0;

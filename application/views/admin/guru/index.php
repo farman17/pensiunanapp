@@ -20,7 +20,8 @@
                             </div>
                             <?php endif; ?>
                             
-                            <?php if($this->session->flashdata('upload_error')) : ?>
+                            <!-- IMPORT DATA DARI EXCEL -->
+                            <!-- <?php if($this->session->flashdata('upload_error')) : ?>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -33,18 +34,8 @@
                             </div>
                             <?php endif; ?>
 
-                            <form action="<?=base_url(); ?>admin/guru/proses" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-                                <div class="form-group">
-                                    <label>Import Data Pegawai </label>
-                                    <input type="text" name="judul" value="Upload File xls" class="form-control" placeholder="Judul">
-                                </div>
-                                <div class="form-group">
-                                    <input type="file" name="file">
-                                </div>
-                                <input type="submit" name="mysubmit" value="Upload" class="btn btn-primary btn-sm btn-rounded">
-                            </form>
-
-                            <hr><br>
+                            <button type="submit"  data-toggle="modal" data-target="#exampleModal-4" class="btn btn-success">Import data dari Excel</button>
+                            <hr><br> -->
 
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
@@ -52,7 +43,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="order-listing" class="table">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -95,3 +86,30 @@
         </div>
     </div>
 </div>
+
+<!-- IMPORT DATA DARI EXCEL -->
+<!-- <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="<?=base_url(); ?>admin/guru/proses" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Import data dari Exel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="judul" value="lanjut">
+                <label for="file">Pilih File (.xls)</label>
+                <div class="form-group">
+                    <input type="file" name="file" id="file">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" name="mysubmit" value="Upload" class="btn btn-success">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </form>
+    </div>
+</div> -->

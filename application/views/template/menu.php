@@ -2,12 +2,12 @@
   <nav class="navbar top-navbar col-lg-12 col-12 p-0">
     <div class="container">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo text-white" href="#"><strong>APLIKASI PENGAJUAN</strong></a>
-        <a class="navbar-brand brand-logo-mini text-white" href="#"><strong>APLIKASI PENGAJUAN</strong></a>
+        <a class="navbar-brand brand-logo text-white" href="#"><strong>APLIKASI PENGAJUAN PENSIUN DAN MUTASI GURU</strong></a>
+        <a class="navbar-brand brand-logo-mini text-white" href="#"><strong>APLIKASI PENGAJUAN PENSIUN DAN MUTASI GURU</strong></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="notificationDropdown" href="#" data-toggle="dropdown">
               <i class="fas fa-bell fa-fw mx-0"></i>
               <span class="count"></span>
@@ -29,8 +29,9 @@
                 </div>
               </a>
             </div>
-          </li>
+          </li> -->
 
+          <?php $link = $this->uri->segment(1,0); ?>
           <li class="nav-item nav-profile dropdown mr-0 mr-sm-3">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="<?= base_url('assets/img/'.$this->session->userdata('gambar')); ?>" />
@@ -38,7 +39,7 @@
               <i class="fas fa-sort-down mb-2"></i>            
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="<?= base_url('admin/user') ?>">
+              <a class="dropdown-item" href="<?= base_url($link.'/user') ?>">
                 <i class="fas fa-fw fa-cog text-primary"></i>
                 Profil
               </a>
@@ -58,10 +59,18 @@
   <nav class="bottom-navbar">
     <div class="container">
       <ul class="nav page-navigation">
+
+        <?php if($link == "admin") : ?>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('admin/home'); ?>">
             <i class="fas fa-tachometer-alt menu-icon"></i>
             <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('admin/cekdata'); ?>">
+            <i class="fas fa-users menu-icon"></i>
+            <span class="menu-title">Cek Data</span>
           </a>
         </li>
         <li class="nav-item">
@@ -82,8 +91,42 @@
             <span class="menu-title">Data Pengajuan</span>
           </a>
         </li>
-        
         <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('admin/pensiun'); ?>">
+            <i class="fas fa-list-ul menu-icon"></i>
+            <span class="menu-title">Hasil Pengajuan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('admin/pengguna'); ?>">
+            <i class="fas fa-users menu-icon"></i>
+            <span class="menu-title">Data Pengguna</span>
+          </a>
+        </li>
+
+        <?php elseif($link == "guru") : ?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/home'); ?>">
+            <i class="fas fa-tachometer-alt menu-icon"></i>
+            <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/pengajuan'); ?>">
+            <i class="fas fa-list-ul menu-icon"></i>
+            <span class="menu-title">Pengajuan</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/status'); ?>">
+            <i class="fas fa-list-ul menu-icon"></i>
+            <span class="menu-title">Status Pengajuan</span>
+          </a>
+        </li>
+
+
+        <?php endif; ?>
+        <!-- <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fas fa-user menu-icon"></i>
             <span class="menu-title">Apps</span>
@@ -96,7 +139,7 @@
                 <li class="nav-item"><a class="nav-link" href="../apps/gallery.html">Gallery</a></li>
               </ul>
             </div>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>

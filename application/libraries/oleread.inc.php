@@ -42,6 +42,8 @@ class OLERead {
         
         
     }
+
+    // function __construct(){	}
     
     function read($sFileName){
         

@@ -48,16 +48,19 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="jns_klmn">Jenis Kelamin</label>
+
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="jns_klmn" id="L" value="L" <?php if(set_value('jns_klmn') == 'L') echo "checked";  ?>>
-                                                        <label class="form-check-label" for="L">
-                                                            Laki-Laki
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="jns_klmn" id="L" value="L" <?php if(set_value('jns_klmn') == 'L') echo "checked";  ?>>
+                                                            Laki-laki
+                                                            <i class="input-helper"></i>
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="jns_klmn" id="P" value="P" <?php if(set_value('jns_klmn') == 'P') echo "checked";  ?>>
-                                                        <label class="form-check-label" for="P">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="jns_klmn" id="P" value="P" <?php if(set_value('jns_klmn') == 'P') echo "checked";  ?>>
                                                             Perempuan
+                                                            <i class="input-helper"></i>
                                                         </label>
                                                     </div>
                                                     <?= form_error('jns_klmn','<small class="text-danger">','</small>'); ?>

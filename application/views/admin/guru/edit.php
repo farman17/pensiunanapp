@@ -23,7 +23,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="nip">NIP</label>
-                                                    <input type="text" class="form-control" id="nip" placeholder="NIP" name="nip" autocomplete="off" value="<?= set_value('nip') ? set_value('nip') : $guru->nip; ?>">
+                                                    <input type="text" class="form-control" id="nip" placeholder="NIP" name="nip" autocomplete="off" value="<?= set_value('nip') ? set_value('nip') : $guru->nip; ?>" readonly>
                                                     <?= form_error('nip','<small class="text-danger">','</small>'); ?>
                                                 </div>
                                                 <div class="form-group">
@@ -50,15 +50,17 @@
                                                 <div class="form-group">
                                                     <label for="jns_klmn">Jenis Kelamin</label>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="jns_klmn" id="L" value="L" <?php if($guru->jns_klmn == 'L') echo "checked";  ?>>
-                                                        <label class="form-check-label" for="L">
-                                                            Laki-Laki
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="jns_klmn" id="L" value="L" <?php if($guru->jns_klmn == 'L') echo "checked";  ?>>
+                                                            Laki-laki
+                                                            <i class="input-helper"></i>
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="jns_klmn" id="P" value="P" <?php if($guru->jns_klmn == 'P') echo "checked";  ?>>
-                                                        <label class="form-check-label" for="P">
+                                                        <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="jns_klmn" id="P" value="P" <?php if($guru->jns_klmn == 'P') echo "checked";  ?>>
                                                             Perempuan
+                                                            <i class="input-helper"></i>
                                                         </label>
                                                     </div>
                                                     <?= form_error('jns_klmn','<small class="text-danger">','</small>'); ?>
