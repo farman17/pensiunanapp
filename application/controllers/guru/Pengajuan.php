@@ -73,6 +73,8 @@ class Pengajuan extends CI_Controller {
 
     public function detailpengajuan()
     {
+        $this->form_validation->set_rules('jenis', 'Jenis Pengajuan', 'required|trim');
+        $this->form_validation->set_rules('keterangan', 'Keterangan Pengajuan', 'required|trim');
         $this->form_validation->set_rules('gaji_pokok_terakhir', 'Gaji Pokok Terakhir', 'required|trim');
         $this->form_validation->set_rules('mksd', 'Masa Kerja Sebelum Diangkat', 'required|trim');
         $this->form_validation->set_rules('pspp', 'Pendidikan Sebagai Pengangkatan Pertama', 'required|trim');
@@ -93,6 +95,8 @@ class Pengajuan extends CI_Controller {
                     'pspp' => '',
                     'mulai_masuk_pns' => '',
                     'alamat' => '',
+                    'jenis' => '',
+                    'keterangan' => '',
                     'guru_id' => ''
                 ];
                 $data['pengajuan'] = $cekQuery;
@@ -110,6 +114,8 @@ class Pengajuan extends CI_Controller {
                 'pspp' => $this->input->post('pspp', true),
                 'mulai_masuk_pns' => $this->input->post('mulai_masuk_pns', true),
                 'alamat' => $this->input->post('alamat', true),
+                'jenis' => $this->input->post('jenis', true),
+                'keterangan' => $this->input->post('keterangan', true),
                 'guru_id' => $this->session->userdata('id')
             ];
             
@@ -119,12 +125,41 @@ class Pengajuan extends CI_Controller {
                 // update
                 $this->db->where('id', $cekQuery->id);
                 $this->db->update('pengajuan', $data);
-                // $this->session->set_flashdata('flash',"Diubah");
+                
+                $this->db->delete('file', ['guru_id' => $this->session->userdata('id')]);
+                
+                if($data['jenis'] == "pensiun"){
+                    // syarat pensiun
+                    $nama_file = ['fc_nip_baru','skp_2th','fc_sk_pengajuan','fc_sk_pengangkatan_pns','fc_sk_pangkat_terakhir','fc_kenaikan_gaji','fc_kartu_pegawai','fc_surat_nikah','fc_kk','fc_akta_tanggungan','pas_foto'];
+
+                } else {
+                    // syarat mutasi
+                    $nama_file = ['surat_pengantar','surat_permohonan','surat_melepas','surat_menerima','sk_pangkat_terakhir','foto_sertivikat_pendidik'];
+                }
+                
+                foreach ($nama_file as $nama_file) {
+
+                    $data_file = [
+                        'judul' => $nama_file,
+                        'file' => '',
+                        'status' => '',
+                        'guru_id' => $this->session->userdata('id'),
+                    ];
+                    $this->db->insert('file', $data_file);
+                }
+
                 redirect('guru/pengajuan/uploadfile');
 
             } else {
                 // tambah data ke tabel file
-                $nama_file = ['fc_nip_baru','skp_2th','fc_sk_pengajuan','fc_sk_pengangkatan_pns','fc_sk_pangkat_terakhir','fc_kenaikan_gaji','fc_kartu_pegawai','fc_surat_nikah','fc_kk','fc_akta_tanggungan','pas_foto'];
+                if($data['jenis'] == "pensiun"){
+                    // syarat pensiun
+                    $nama_file = ['fc_nip_baru','skp_2th','fc_sk_pengajuan','fc_sk_pengangkatan_pns','fc_sk_pangkat_terakhir','fc_kenaikan_gaji','fc_kartu_pegawai','fc_surat_nikah','fc_kk','fc_akta_tanggungan','pas_foto'];
+
+                } else {
+                    // syarat mutasi
+                    $nama_file = ['surat_pengantar','surat_permohonan','surat_melepas','surat_menerima','sk_pangkat_terakhir','foto_sertivikat_pendidik'];
+                }
                 
                 foreach ($nama_file as $nama_file) {
 

@@ -25,6 +25,21 @@
                                 <div class="card-body">
                                     <form method="post" action="">
                                         <div class="form-group">
+                                            <label for="jenis">Jenis Pengajuan</label>
+                                            <select name="jenis" id="jenis" class="form-control">
+                                                <?php $jenis = set_value('jenis') ? set_value('jenis') : $pengajuan['jenis']; ?>
+                                                <option value="">-- Pilih --</option>
+                                                <option value="pensiun" <?php if($jenis == "pensiun") echo "selected"; else ""; ?>>Pensiun</option>
+                                                <option value="mutasi" <?php if($jenis == "mutasi") echo "selected"; else ""; ?>>Mutasi</option>
+                                            </select>
+                                            <?= form_error('jenis','<small class="text-danger">','</small>'); ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="keterangan">Keterangan Pengajuan</label>
+                                            <input type="text" class="form-control" id="keterangan" placeholder="Keterangan Pengajuan" name="keterangan" autocomplete="off" value="<?= set_value('keterangan') ? set_value('keterangan') : $pengajuan['keterangan']; ?>">
+                                            <?= form_error('keterangan','<small class="text-danger">','</small>'); ?>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="nomor_karpeg">Nomor Karpeg</label>
                                             <input type="text" class="form-control" id="nomor_karpeg" placeholder="Nomor Karpeg" name="nomor_karpeg" autocomplete="off" value="<?= set_value('nomor_karpeg') ? set_value('nomor_karpeg') : $pengajuan['nomor_karpeg']; ?>">
                                             <?= form_error('nomor_karpeg','<small class="text-danger">','</small>'); ?>

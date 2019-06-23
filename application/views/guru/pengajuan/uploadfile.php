@@ -75,7 +75,7 @@
 
                                             foreach($file as $f) : ?>
                                             <tr>
-                                                <td><?= $f->judul ?></td>
+                                                <td><?= str_replace("-", " ", $f->judul); ?></td>
                                                 <td>
                                                     <?php if($f->file == "") : ?>
                                                         <form name="form1" id="form1" method="post" action="" enctype="multipart/form-data">        

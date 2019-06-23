@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-8">
                             <h1 class="h3 text-gray-800 mb-4">Data Pegawai yang harus mengajukan usulan pensiun</h1>
 
                             <div class="card shadow mb-4">

@@ -17,7 +17,7 @@
                                             <form method="post" action="">
                                                 <div class="form-group">
                                                     <label for="nip_lama">NIP Lama</label>
-                                                    <input type="text" class="form-control" id="nip_lama" placeholder="NIP Lama" name="nip_lama" autocomplete="off" value="<?= set_value('nip_lama'); ?>">
+                                                    <input type="number" class="form-control" id="nip_lama" placeholder="NIP Lama" name="nip_lama" autocomplete="off" value="<?= set_value('nip_lama'); ?>">
                                                     <?= form_error('nip_lama','<small class="text-danger">','</small>'); ?>
                                                 </div>
                                                 <div class="form-group">

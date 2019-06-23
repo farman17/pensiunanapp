@@ -15,5 +15,11 @@ class Home extends CI_Controller {
         $data['_view']= "admin/home";
         $this->load->view('template/index', $data);
     }
+
+    public function login()
+    {
+        $data['_view']= "admin/login";
+        $this->load->view('template/index', $data);
+    }
     
 }
