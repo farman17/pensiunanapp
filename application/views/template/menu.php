@@ -105,6 +105,18 @@
             <span class="menu-title">Cetak Berkas</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/user'); ?>">
+            <i class="fas fa-user  menu-icon"></i>
+            <span class="menu-title">Profil</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/user/ubahpassword'); ?>">
+            <i class="fas fa-cog  menu-icon"></i>
+            <span class="menu-title">Ubah Password</span>
+          </a>
+        </li>
         <?php endif; ?>
       </ul>
     </div>

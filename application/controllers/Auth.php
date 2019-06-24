@@ -65,6 +65,48 @@ class Auth extends CI_Controller {
     {
         $this->load->view('auth/403');
     }
+
+    public function register()
+    {
+        $this->load->model('Jabatan_model');
+        $this->load->model('Guru_model');
+        $data['status'] = ['PNS','HONORER'];
+        $data['jabatan'] = $this->Jabatan_model->getAll();
+        $data['agama'] = ['Islam','Kristen','Katolik','Hindu','Budha'];
+        
+        $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|trim|min_length[12]|max_length[12]');
+        $this->form_validation->set_rules('nip', 'NIP', 'required|trim|min_length[12]|max_length[12]|is_unique[guru.nip]',[
+            'is_unique' => 'NIP sudah terdaftar',
+        ]);
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+        $this->form_validation->set_rules('tmp_lahir', 'Tempat Lahir', 'required|trim');
+        $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|trim');
+        $this->form_validation->set_rules('jns_klmn', 'Jenis Kelamin', 'required|trim');
+        $this->form_validation->set_rules('status', 'Status', 'required|trim');
+        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
+        $this->form_validation->set_rules('tamat_pangkat', 'Tamat Pangkat', 'required|trim');
+        $this->form_validation->set_rules('tamat_jabatan', 'Tamat Jabatan', 'required|trim');
+        $this->form_validation->set_rules('agama', 'Agama', 'required|trim');
+        $this->form_validation->set_rules('telepon', 'Telepon', 'required|trim');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+        $this->form_validation->set_rules('unit_kerja', 'Unit Kerja', 'required|trim');
+        $this->form_validation->set_rules('th_lulus', 'Tahun Lulus', 'required|trim');
+        $this->form_validation->set_rules('pendidikan_terakhir', 'Pendidikan Terakhir', 'required|trim');
+        $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+		    $this->load->view('auth/register', $data);
+        }
+        else
+        {
+            $this->Guru_model->insert();
+
+            $this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">Registrasi Berhasil!</div>');
+            
+            redirect('auth');
+        }
+    }
     
     public function logout()
     {

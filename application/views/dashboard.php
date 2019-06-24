@@ -43,11 +43,11 @@
                         <span class="nav-profile-name mr-2">Login</span>  
                         </a>
                     </li>
-                    <!-- <li class="nav-item nav-profile dropdown mr-0 mr-sm-3">
-                        <a class="nav-link" href="<?= base_url('') ?>">
+                    <li class="nav-item nav-profile dropdown mr-0 mr-sm-3">
+                        <a class="nav-link" href="<?= base_url('auth/register') ?>">
                         <span class="nav-profile-name mr-2">Registrasi</span>  
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
                 <span class="mdi mdi-menu"></span>
