@@ -14,9 +14,14 @@
                                         <h1 class="h3 text-gray-800 mb-4">STATUS PENGAJUAN PENSIUN DITOLAK, ULANGI PENGAJUAN!</h1>
                                         <a href="<?= base_url() ?>guru/pengajuan">Form Pengajuan</a>
                                     </div>
+                                <?php endif ?>
+                                <?php if($pengajuan->status == 0 && $pengajuan->pengembalian_inventaris == 0) : ?>
+                                    <div class="col-12">
+                                        <h1 class="h3 text-gray-800 mb-4">BELUM ADA PROSES PENGAJUAN</h1>
+                                    </div>
                                 <?php else : ?>
                                     <div class="col-12">
-                                        <h1 class="h3 text-gray-800 mb-4">STATUS PENGAJUAN PENSIUN MASIH DALAM PROSES</h1>
+                                        <h1 class="h3 text-gray-800 mb-4">STATUS PENGAJUAN PENSIUN MASIH DALAM PROSES PENILAIAN</h1>
                                     </div>
                                 <?php endif ?>
 

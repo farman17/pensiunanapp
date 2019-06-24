@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="gaji_pokok">Gaji Pokok</label>
-                                            <input type="text" class="form-control" id="gaji_pokok" placeholder="Gaji Pokok" name="gaji_pokok" autocomplete="off" value="<?= set_value('gaji_pokok') ? set_value('gaji_pokok') : ''; ?>">
+                                            <input type="text" class="form-control" id="gaji_pokok" placeholder="Gaji Pokok" name="gaji_pokok" autocomplete="off" value="<?= set_value('gaji_pokok') ? set_value('gaji_pokok') : $pengajuan['gaji_pokok']; ?>">
                                             <?= form_error('gaji_pokok','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         

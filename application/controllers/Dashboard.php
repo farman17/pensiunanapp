@@ -12,4 +12,8 @@ class Dashboard extends CI_Controller {
         $this->load->view('dashboard');
     }
 
+    public function pertama()
+    {
+        $this->load->view('pertama');
+    }
 }

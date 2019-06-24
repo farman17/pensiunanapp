@@ -68,7 +68,7 @@ class Guru_model extends CI_model {
 
         $data = [
             'nip_lama' => str_replace(' ', '', $this->input->post('nip_lama', true)),
-            // 'nip' => str_replace(' ', '', $this->input->post('nip', true)),
+            'nip' => str_replace(' ', '', $this->input->post('nip', true)),
             'nama' => $this->input->post('nama', true),
             'tmp_lahir' => $this->input->post('tmp_lahir', true),
             'tgl_lahir' => $this->input->post('tgl_lahir', true),

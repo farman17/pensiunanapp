@@ -99,6 +99,12 @@
             <span class="menu-title">Status Pengajuan</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/berkas'); ?>">
+            <i class="fas fa-list-ul menu-icon"></i>
+            <span class="menu-title">Cetak Berkas</span>
+          </a>
+        </li>
         <?php endif; ?>
       </ul>
     </div>

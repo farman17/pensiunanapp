@@ -21,7 +21,7 @@
                             <?php endif; ?>
                             
                             <!-- IMPORT DATA DARI EXCEL -->
-                            <!-- <?php if($this->session->flashdata('upload_error')) : ?>
+                            <?php if($this->session->flashdata('upload_error')) : ?>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -35,7 +35,7 @@
                             <?php endif; ?>
 
                             <button type="submit"  data-toggle="modal" data-target="#exampleModal-4" class="btn btn-success">Import data dari Excel</button>
-                            <hr><br> -->
+                            <hr><br>
 
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
@@ -88,7 +88,7 @@
 </div>
 
 <!-- IMPORT DATA DARI EXCEL -->
-<!-- <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form action="<?=base_url(); ?>admin/guru/proses" enctype="multipart/form-data" method="post" accept-charset="utf-8">
             <div class="modal-content">
@@ -112,4 +112,4 @@
             </div>
         </form>
     </div>
-</div> -->
+</div>

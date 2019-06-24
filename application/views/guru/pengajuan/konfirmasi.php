@@ -26,21 +26,6 @@
                                     <form class="forms-sample" action="" method="post">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="jenis">Jenis Pengajuan</label>
-                                                    <select name="jenis" id="jenis" class="form-control">
-                                                        <option value="">-- Pilih --</option>
-                                                        <option value="pensiun">Pensiun</option>
-                                                        <option value="mutasi">Mutasi</option>
-                                                    </select>
-                                                    <?= form_error('jenis','<small class="text-danger">','</small>'); ?>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="keterangan">Keterangan Pengajuan</label>
-                                                    <textarea name="keterangan" id="keterangan" class="form-control"></textarea>
-                                                    <?= form_error('keterangan','<small class="text-danger">','</small>'); ?>
-                                                </div>
-                                                <hr>
                                                 <div class="form-group ml-4">
                                                     <label for="pengembalian_inventaris">
                                                         <input type="checkbox" name="pengembalian_inventaris" value="1" class="form-check-input" id="pengembalian_inventaris">

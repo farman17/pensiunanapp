@@ -27451,12 +27451,14 @@ div.tagsinput span.tag a {
 @media (min-width: 992px) {
   .content-wrapper {
     max-width: 960px;
+    min-height: 500px;
   }
 }
 
 @media (min-width: 1200px) {
   .content-wrapper {
     max-width: 1140px;
+    min-height: 720px;
   }
 }
 

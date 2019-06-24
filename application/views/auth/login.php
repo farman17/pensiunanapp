@@ -34,7 +34,7 @@
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown mr-0 mr-sm-3">
-                        <a class="nav-link" href="<?= base_url('') ?>" >
+                        <a class="nav-link" href="<?= base_url('dashboard') ?>" >
                         <span class="nav-profile-name mr-2">Dashboard</span>  
                         </a>
                     </li>

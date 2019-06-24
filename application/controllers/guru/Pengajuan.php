@@ -97,6 +97,7 @@ class Pengajuan extends CI_Controller {
                     'alamat' => '',
                     'jenis' => '',
                     'keterangan' => '',
+                    'gaji_pokok' => '',
                     'guru_id' => ''
                 ];
                 $data['pengajuan'] = $cekQuery;
@@ -116,6 +117,7 @@ class Pengajuan extends CI_Controller {
                 'alamat' => $this->input->post('alamat', true),
                 'jenis' => $this->input->post('jenis', true),
                 'keterangan' => $this->input->post('keterangan', true),
+                'gaji_pokok' => $this->input->post('gaji_pokok', true),
                 'guru_id' => $this->session->userdata('id')
             ];
             
@@ -130,11 +132,11 @@ class Pengajuan extends CI_Controller {
                 
                 if($data['jenis'] == "pensiun"){
                     // syarat pensiun
-                    $nama_file = ['fc_nip_baru','skp_2th','fc_sk_pengajuan','fc_sk_pengangkatan_pns','fc_sk_pangkat_terakhir','fc_kenaikan_gaji','fc_kartu_pegawai','fc_surat_nikah','fc_kk','fc_akta_tanggungan','pas_foto'];
+                    $nama_file = ['fc nip baru','skp 2th','fc sk pengajuan','fc sk pengangkatan pns','fc sk pangkat terakhir','fc kenaikan gaji','fc kartu pegawai','fc surat nikah','fc kk','fc akta tanggungan','pas foto'];
 
                 } else {
                     // syarat mutasi
-                    $nama_file = ['surat_pengantar','surat_permohonan','surat_melepas','surat_menerima','sk_pangkat_terakhir','foto_sertivikat_pendidik'];
+                    $nama_file = ['surat pengantar','surat permohonan','Surat bersedia melepas/lolos dari sekolah yang akan ditinggalkan, dilampiri tabel kelebihan dan kekurangan guru','Surat bersedia menerima/butuh dari sekolah yang dituju ditabel kelebihan dan kekurangan guru','sk pangkat terakhir','foto sertivikat pendidik'];
                 }
                 
                 foreach ($nama_file as $nama_file) {
@@ -276,8 +278,6 @@ class Pengajuan extends CI_Controller {
     
     public function konfirmasi()
     {
-        $this->form_validation->set_rules('jenis', 'Jenis Pengajuan', 'required|trim');
-        $this->form_validation->set_rules('keterangan', 'Keterangan Pengajuan', 'required|trim');
         $this->form_validation->set_rules('pengembalian_inventaris', 'Pengembalian Inventaris', 'required|trim');
         $this->form_validation->set_rules('status', 'Status', 'required|trim');
 
@@ -289,8 +289,6 @@ class Pengajuan extends CI_Controller {
         else
         {
             // pengajuan selesai
-            $this->db->set('jenis', $this->input->post('jenis'));
-            $this->db->set('keterangan', $this->input->post('keterangan'));
             $this->db->set('pengembalian_inventaris', $this->input->post('pengembalian_inventaris'));
             $this->db->set('status', 0);
             $this->db->where('guru_id',$this->session->userdata('id'));

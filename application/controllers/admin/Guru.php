@@ -72,9 +72,7 @@ class Guru extends CI_Controller {
         $data['agama'] = ['Islam','Kristen','Katolik','Hindu','Budha'];
         
         $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|trim|min_length[12]|max_length[12]');
-        // $this->form_validation->set_rules('nip', 'NIP', 'required|trim|is_unique[guru.nip]',[
-        //     'is_unique' => 'NIP sudah terdaftar',
-        // ]);
+        $this->form_validation->set_rules('nip', 'nip', 'required|trim|min_length[12]|max_length[12]');
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('tmp_lahir', 'Tempat Lahir', 'required|trim');
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|trim');
@@ -141,7 +139,7 @@ class Guru extends CI_Controller {
             } else {
               // jika berhasil upload ambil data dan masukkan ke database
               $upload_data = $this->upload->data();
-            //   var_dump($upload_data);die();
+                // var_dump($upload_data);die();
               // load library Excell_Reader
               $this->load->library('Excel_reader');
               //tentukan file

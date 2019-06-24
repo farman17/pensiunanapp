@@ -23,7 +23,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="nip">NIP</label>
-                                                    <input type="text" class="form-control" id="nip" placeholder="NIP" name="nip" autocomplete="off" value="<?= set_value('nip') ? set_value('nip') : $guru->nip; ?>" readonly>
+                                                    <input type="text" class="form-control" id="nip" placeholder="NIP" name="nip" autocomplete="off" value="<?= set_value('nip') ? set_value('nip') : $guru->nip; ?>">
                                                     <?= form_error('nip','<small class="text-danger">','</small>'); ?>
                                                 </div>
                                                 <div class="form-group">
