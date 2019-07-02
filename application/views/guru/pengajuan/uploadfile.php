@@ -18,6 +18,10 @@
 
                             <hr>
 
+                            <span style="color:red">* Format File hanya boleh berupa : JPG, PNG, dan PDF.</span><br>
+                            <span style="color:red">* Ukuran FIle Maksimal 2 Mb.</span>
+
+                            <br><br>
                             <div class="card">
                                 <div class="card-header">
                                     Upload File

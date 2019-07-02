@@ -19,6 +19,10 @@
                 <i class="fas fa-fw fa-cog text-primary"></i>
                 Profil
               </a>
+              <a class="dropdown-item" href="<?= base_url($link.'/user/ubahpassword') ?>">
+                <i class="fas fa-fw fa-key text-primary"></i>
+                Ubah Password
+              </a>
               <a class="dropdown-item" href="<?= base_url() ?>auth/logout">
                 <i class="fas fa-sign-out-alt text-primary"></i>
                 Logout
@@ -113,7 +117,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('guru/user/ubahpassword'); ?>">
-            <i class="fas fa-cog  menu-icon"></i>
+            <i class="fas fa-key  menu-icon"></i>
             <span class="menu-title">Ubah Password</span>
           </a>
         </li>

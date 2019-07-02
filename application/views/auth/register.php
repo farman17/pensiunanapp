@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.addons.css">
-  <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.png" />
+  <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo.png" />
 
   <!-- Custom styles for this page -->
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
@@ -204,6 +204,17 @@
                                             <label for="kecamatan">Kecamatan</label>
                                             <input type="text" class="form-control" id="kecamatan" placeholder="Kecamatan" name="kecamatan" autocomplete="off" value="<?= set_value('kecamatan'); ?>">
                                             <?= form_error('kecamatan','<small class="text-danger">','</small>'); ?>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label for="password1">Password</label>
+                                                <input type="password" class="form-control" id="password1" placeholder="Password" name="password1" autocomplete="off">
+                                                <?= form_error('password1','<small class="text-danger">','</small>'); ?>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label for="password2">Ulangi Password</label>
+                                                <input type="password" class="form-control" id="password2" placeholder="Ulangi Password" name="password2" autocomplete="off">
+                                            </div>
                                         </div>
                                         <button type="submit" name="simpan" class="btn btn-primary">Save</button>
                                         <a href="<?= base_url('admin/guru') ?>" class="btn btn-secondary">Kembali</a>

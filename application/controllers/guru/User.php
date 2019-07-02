@@ -16,6 +16,14 @@ class User extends CI_Controller {
         $this->load->view('template/index', $data);
     }
 
+    public function edit()
+    {
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+        
+        $data['_view']= "guru/edituser";
+        $this->load->view('template/index', $data);
+    }
+
     public function ubahpassword()
     {
         $data['pengguna'] = $this->db->get_where('user',['username' => $this->session->userdata('username')])->row();

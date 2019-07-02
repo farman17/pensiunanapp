@@ -75,7 +75,8 @@ class Pengajuan extends CI_Controller {
     {
         $this->form_validation->set_rules('jenis', 'Jenis Pengajuan', 'required|trim');
         $this->form_validation->set_rules('keterangan', 'Keterangan Pengajuan', 'required|trim');
-        $this->form_validation->set_rules('gaji_pokok_terakhir', 'Gaji Pokok Terakhir', 'required|trim');
+        $this->form_validation->set_rules('gaji_pokok_terakhir', 'Gaji Pokok Terakhir', 'required|numeric|trim');
+        $this->form_validation->set_rules('gaji_pokok', 'Gaji Pokok', 'required|numeric|trim');
         $this->form_validation->set_rules('mksd', 'Masa Kerja Sebelum Diangkat', 'required|trim');
         $this->form_validation->set_rules('pspp', 'Pendidikan Sebagai Pengangkatan Pertama', 'required|trim');
         $this->form_validation->set_rules('mulai_masuk_pns', 'Mulai Masuk PNS', 'required|trim');

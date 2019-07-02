@@ -72,7 +72,7 @@ class Auth extends CI_Controller {
         $this->load->model('Guru_model');
         $data['status'] = ['PNS','HONORER'];
         $data['jabatan'] = $this->Jabatan_model->getAll();
-        $data['agama'] = ['Islam','Kristen','Katolik','Hindu','Budha'];
+        $data['agama'] = ['Islam','Kristen','Katolik','Hindu','Budha','Konghucu'];
         
         $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|trim|min_length[12]|max_length[12]');
         $this->form_validation->set_rules('nip', 'NIP', 'required|trim|min_length[12]|max_length[12]|is_unique[guru.nip]',[
@@ -93,6 +93,11 @@ class Auth extends CI_Controller {
         $this->form_validation->set_rules('th_lulus', 'Tahun Lulus', 'required|trim');
         $this->form_validation->set_rules('pendidikan_terakhir', 'Pendidikan Terakhir', 'required|trim');
         $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
+        $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[4]|matches[password2]',[
+            'matches' => 'Password tidak sama',
+            'min_length' => 'Password harus lebih dari 4 karakter',
+        ]);
+        $this->form_validation->set_rules('password2', 'Password', 'matches[password1]');
 
         if ($this->form_validation->run() == FALSE)
         {

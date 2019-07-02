@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.addons.css">
-  <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.png" />
+  <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo.png" />
 
   <!-- Custom styles for this page -->
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">

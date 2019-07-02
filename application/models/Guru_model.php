@@ -54,7 +54,7 @@ class Guru_model extends CI_model {
             "role_id" => 2,
             "username" => $data['nip'],
             "nama" => $data['nama'],
-            "password" => password_hash('1234',PASSWORD_DEFAULT),
+            "password" => password_hash($this->input->post('password1'),PASSWORD_DEFAULT),
             "gambar" => "avatar.jpg",
             "is_active" => 1,
             "date_created" => time(),

@@ -10,7 +10,7 @@
   <title>Aplikasi pengajuan pensiun dan mutasi</title>
 
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/horizontal-layout/style.css">
-  <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.png" />
+  <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo.png" />
 </head>
 
 <body>

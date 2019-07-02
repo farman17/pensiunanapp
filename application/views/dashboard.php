@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.addons.css">
-  <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.png" />
+  <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo.png" />
 
   <!-- Custom styles for this page -->
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
@@ -64,6 +64,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="h3 text-gray-800 mb-4">Selamat datang di aplikasi    pengajuan pensiun dan mutasi</h1>
+
+                        <img src="<?= base_url('assets/img/alur.jpg') ?>" class="img-thumbnail">
+
+                        <hr>
+
                         <a href="<?= base_url('syarat.docx') ?>" target="_blank" class="btn btn-success mb-3"><i class="fas fa-file-download mr-2"></i>  Unduh Persyaratan</a>
                         <div class="row">
                             <div class="col-6">

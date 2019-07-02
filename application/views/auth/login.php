@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.addons.css">
-  <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.png" />
+  <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo.png" />
 
   <!-- Custom styles for this page -->
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
@@ -77,8 +77,8 @@
 
                 <form class="pt-3" method="POST" action="">
                   <div class="form-group">
-                      <label for="username">Masukkan Username</label>
-                      <input type="text" class="form-control form-control-lg" id="username" placeholder="" name="username" autocomplete="off" value="<?= set_value('username') ?>">
+                      <label for="username">Masukkan NIP</label>
+                      <input type="text" class="form-control form-control-lg" id="username" placeholder="Masukkan NIP" name="username" autocomplete="off" value="<?= set_value('username') ?>">
                       <?= form_error('username','<small class="text-danger">','</small>'); ?>
                   </div>
                   <div class="form-group">

@@ -7,6 +7,9 @@
                         <div class="col-12">
                             <h1 class="h3 text-gray-800 mb-4">Selamat datang di aplikasi pengajuan pensiun dan mutasi, <?= $user['nama'] ?></h1>
 
+                            <img src="<?= base_url('assets/img/alur.jpg') ?>" class="img-thumbnail">
+
+                            <hr>
                             <a href="<?= base_url('syarat.docx') ?>" target="_blank" class="btn btn-success mb-3"><i class="fas fa-file-download mr-2"></i>  Unduh Persyaratan</a>
                             <div class="row">
                                 <div class="col-6">
