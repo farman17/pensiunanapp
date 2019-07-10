@@ -15,7 +15,7 @@ class Pensiun extends CI_Controller {
                     WHERE `pengajuan`.`guru_id` = `guru`.`id`";
         $data['pengajuan'] = $this->db->query($query)->result();
 
-        $data['_view']= "admin/pensiun/index";
+        $data['_view']= "pimpinan/pensiun/index";
         $this->load->view('template/index', $data);
     }
 
@@ -27,7 +27,7 @@ class Pensiun extends CI_Controller {
 
         $data['pengajuan'] = $this->db->query($query)->row();
 
-        $data['_view']= "admin/pensiun/cekdata";
+        $data['_view']= "pimpinan/pensiun/cekdata";
         $this->load->view('template/index', $data);
     }
 
@@ -45,7 +45,7 @@ class Pensiun extends CI_Controller {
             $this->db->update('pengajuan', $data);
         }
         
-        redirect('admin/pensiun');
+        redirect('pimpinan/pensiun');
     }
 
     public function validasi($status, $id)

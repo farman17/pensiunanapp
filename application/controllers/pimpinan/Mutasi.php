@@ -14,7 +14,7 @@ class Mutasi extends CI_Controller {
                     WHERE `mutasi`.`guru_id` = `guru`.`id`";
         $data['mutasi'] = $this->db->query($query)->result();
 
-        $data['_view']= "admin/mutasi/index";
+        $data['_view']= "pimpinan/mutasi/index";
         $this->load->view('template/index', $data);
     }
 
@@ -26,7 +26,7 @@ class Mutasi extends CI_Controller {
 
         $data['mutasi'] = $this->db->query($query)->row();
 
-        $data['_view']= "admin/mutasi/cekdata";
+        $data['_view']= "pimpinan/mutasi/cekdata";
         $this->load->view('template/index', $data);
     }
 
@@ -44,7 +44,7 @@ class Mutasi extends CI_Controller {
             $this->db->update('mutasi', $data);
         }
         
-        redirect('admin/mutasi');
+        redirect('pimpinan/mutasi');
     }
 
     public function validasi($status, $id)

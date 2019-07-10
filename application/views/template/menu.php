@@ -40,7 +40,7 @@
     <div class="container">
       <ul class="nav page-navigation">
 
-        <?php if($link == "admin") : ?>
+        <?php if($link == "admin") { ?>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('admin/home'); ?>">
             <i class="fas fa-tachometer-alt menu-icon"></i>
@@ -84,7 +84,7 @@
           </a>
         </li>
 
-        <?php elseif($link == "guru") : ?>
+        <?php } elseif($link == "guru") { ?>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('guru/home'); ?>">
             <i class="fas fa-tachometer-alt menu-icon"></i>
@@ -127,7 +127,34 @@
             <span class="menu-title">Ubah Password</span>
           </a>
         </li>
-        <?php endif; ?>
+
+        <?php } elseif($link == "pimpinan") { ?>
+
+        <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('pimpinan/home'); ?>">
+          <i class="fas fa-tachometer-alt menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('pimpinan/guru'); ?>">
+          <i class="fas fa-users menu-icon"></i>
+          <span class="menu-title">Data Guru</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('pimpinan/pensiun'); ?>">
+          <i class="fas fa-list-ul menu-icon"></i>
+          <span class="menu-title">Data Pensiun</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('pimpinan/mutasi'); ?>">
+          <i class="fas fa-list-ul menu-icon"></i>
+          <span class="menu-title">Data Mutasi</span>
+        </a>
+      </li>
+        <?php }; ?>
       </ul>
     </div>
   </nav>

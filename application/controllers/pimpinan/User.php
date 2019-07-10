@@ -12,7 +12,7 @@ class User extends CI_Controller {
     {
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         
-        $data['_view']= "admin/user";
+        $data['_view']= "pimpinan/user";
         $this->load->view('template/index', $data);
     }
 
@@ -29,7 +29,7 @@ class User extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-            $data['_view'] = "admin/ubahpassword";
+            $data['_view'] = "pimpinan/ubahpassword";
 		    $this->load->view('template/index', $data);
         }
         else
@@ -41,12 +41,12 @@ class User extends CI_Controller {
             if(!password_verify($passwordlama, $data['pengguna']->password)){
                 // password lama salah
                 $this->session->set_flashdata('flash',"Password lama salah");
-                redirect('admin/user/ubahpassword');
+                redirect('pimpinan/user/ubahpassword');
             } else {
                 if($passwordlama == $passwordbaru){
                     // password tidak boleh sama dengan yg lama
                     $this->session->set_flashdata('flash',"Password Baru tidak boleh sama dg password lama");
-                    redirect('admin/user/ubahpassword');
+                    redirect('pimpinan/user/ubahpassword');
                 } else {
                     // password ok
                     $password_hash = password_hash($passwordbaru, PASSWORD_DEFAULT);
@@ -56,7 +56,7 @@ class User extends CI_Controller {
                     $this->db->update('user');
 
                     $this->session->set_flashdata('flash',"Password berhasil diubah");
-                    redirect('admin/user');
+                    redirect('pimpinan/user');
                 }
             }
         }
