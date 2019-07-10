@@ -62,7 +62,7 @@
                                                         <td><?= $i++ ?></td>
                                                         <td><?= $g->nip ?></td>
                                                         <td><?= $g->nama ?></td>
-                                                        <td><?= $g->tmp_lahir ?>, <?= $g->tgl_lahir ?></td>
+                                                        <td><?= $g->tmp_lahir ?>, <?= tanggal_id($g->tgl_lahir) ?></td>
                                                         <td><?= $g->jns_klmn ?></td>
                                                         <td><?= $g->status ?></td>
                                                         <td><?= $g->alamat ?></td>

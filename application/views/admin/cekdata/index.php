@@ -40,7 +40,7 @@
                                                         <td><?= $g->nip ?></td>
                                                         <td><?= $g->nama ?></td>
                                                         <td><?= $g->alamat ?></td>
-                                                        <td><?= $g->pensiun ?></td>
+                                                        <td><?= tanggal_id($g->pensiun); ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 27, 2019 at 09:16 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Host: localhost
+-- Generation Time: Jul 06, 2019 at 08:54 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,17 +41,12 @@ CREATE TABLE `file` (
 --
 
 INSERT INTO `file` (`id`, `judul`, `file`, `status`, `guru_id`) VALUES
-(2, 'fc_nip_baru', '2-2.jpg', 0, 2),
-(3, 'skp_2th', '2-3.jpg', 0, 2),
-(4, 'fc_sk_pengajuan', '2-4.jpg', 0, 2),
-(5, 'fc_sk_pengangkatan_pns', '2-5.jpg', 0, 2),
-(6, 'fc_sk_pangkat_terakhir', '2-6.jpg', 0, 2),
-(7, 'fc_kenaikan_gaji', '2-7.jpg', 0, 2),
-(8, 'fc_kartu_pegawai', '2-8.jpg', 0, 2),
-(9, 'fc_surat_nikah', '2-9.jpg', 0, 2),
-(10, 'fc_kk', '2-10.jpg', 0, 2),
-(11, 'fc_akta_tanggungan', '2-11.jpg', 0, 2),
-(12, 'pas_foto', '2-12.jpg', 0, 2);
+(56, 'surat pengantar', '', 0, 2),
+(57, 'surat permohonan', '', 0, 2),
+(58, 'Surat bersedia melepas/lolos dari sekolah yang akan ditinggalkan, dilampiri tabel kelebihan dan keku', '', 0, 2),
+(59, 'Surat bersedia menerima/butuh dari sekolah yang dituju ditabel kelebihan dan kekurangan guru', '', 0, 2),
+(60, 'sk pangkat terakhir', '', 0, 2),
+(61, 'foto sertivikat pendidik', '', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -70,7 +65,7 @@ CREATE TABLE `guru` (
   `status` varchar(45) DEFAULT NULL,
   `agama` varchar(45) DEFAULT NULL,
   `telepon` varchar(45) DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `unit_kerja` varchar(255) DEFAULT NULL,
   `pensiun` date DEFAULT NULL,
   `pendidikan_terakhir` varchar(45) DEFAULT NULL,
@@ -149,6 +144,8 @@ CREATE TABLE `pengajuan` (
   `gaji_pokok` double NOT NULL,
   `pengembalian_inventaris` int(11) NOT NULL,
   `status` int(11) NOT NULL,
+  `jenis` varchar(100) NOT NULL,
+  `keterangan` text NOT NULL,
   `guru_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -156,8 +153,8 @@ CREATE TABLE `pengajuan` (
 -- Dumping data for table `pengajuan`
 --
 
-INSERT INTO `pengajuan` (`id`, `nomor_karpeg`, `gaji_pokok_terakhir`, `mksd`, `pspp`, `mulai_masuk_pns`, `alamat`, `gaji_pokok`, `pengembalian_inventaris`, `status`, `guru_id`) VALUES
-(4, 0, 11111, '2001-12-12', 'sd', '1997-12-12', 'banyuwangi', 0, 1, 0, 2);
+INSERT INTO `pengajuan` (`id`, `nomor_karpeg`, `gaji_pokok_terakhir`, `mksd`, `pspp`, `mulai_masuk_pns`, `alamat`, `gaji_pokok`, `pengembalian_inventaris`, `status`, `jenis`, `keterangan`, `guru_id`) VALUES
+(2, 0, 3000000, '2019-07-10', 's1', '2010-06-15', 'jl. wahid hasim, genteng banyuwangi', 3000000, 0, 0, 'mutasi', 'pensiun', 2);
 
 -- --------------------------------------------------------
 
@@ -261,7 +258,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `file`
 --
 ALTER TABLE `file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `guru`
@@ -273,19 +270,19 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `role`

@@ -19,3 +19,11 @@ function cek_login(){
 
     }
 }
+
+function tanggal_id($tanggal){
+    //potong 
+    $tanggal2 = substr($tanggal,8,2);
+    $bulan = substr($tanggal,5,2);
+    $tahun = substr($tanggal,0,4);
+    return $tanggal2.'-'.$bulan.'-'.$tahun;		 
+}

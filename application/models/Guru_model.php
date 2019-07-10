@@ -34,8 +34,6 @@ class Guru_model extends CI_model {
             'jns_klmn' => $this->input->post('jns_klmn', true),
             'status' => $this->input->post('status', true),
             'jabatan_id' => $this->input->post('jabatan', true),
-            'tamat_jabatan' => $this->input->post('tamat_jabatan', true),
-            'tamat_pangkat' => $this->input->post('tamat_pangkat', true),
             'agama' => $this->input->post('agama', true),
             'telepon' => $this->input->post('telepon', true),
             'alamat' => $this->input->post('alamat', true),

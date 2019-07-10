@@ -66,15 +66,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('admin/pengajuan'); ?>">
+          <a class="nav-link" href="<?= base_url('admin/pensiun'); ?>">
             <i class="fas fa-list-ul menu-icon"></i>
-            <span class="menu-title">Data Pengajuan</span>
+            <span class="menu-title">Data Pensiun</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('admin/pensiun'); ?>">
+          <a class="nav-link" href="<?= base_url('admin/mutasi'); ?>">
             <i class="fas fa-list-ul menu-icon"></i>
-            <span class="menu-title">Hasil Pengajuan</span>
+            <span class="menu-title">Data Mutasi</span>
           </a>
         </li>
         <li class="nav-item">
@@ -98,15 +98,21 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('guru/status'); ?>">
+          <a class="nav-link" href="<?= base_url('guru/riwayatpekerjaan'); ?>">
             <i class="fas fa-list-ul menu-icon"></i>
-            <span class="menu-title">Status Pengajuan</span>
+            <span class="menu-title">Riwayat pekerjaan</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('guru/berkas'); ?>">
+          <a class="nav-link" href="<?= base_url('guru/statuspensiun'); ?>">
             <i class="fas fa-list-ul menu-icon"></i>
-            <span class="menu-title">Cetak Berkas</span>
+            <span class="menu-title">Status Pengajuan Pensiun</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('guru/statusmutasi'); ?>">
+            <i class="fas fa-list-ul menu-icon"></i>
+            <span class="menu-title">Status Pengajuan Mutasi</span>
           </a>
         </li>
         <li class="nav-item">

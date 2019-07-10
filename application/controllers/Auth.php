@@ -47,6 +47,8 @@ class Auth extends CI_Controller {
                     redirect('admin/home');
                 } else if($user->role_id == 2){
                     redirect('guru/home');
+                } else if($user->role_id == 3){
+                    redirect('pimpinan/home');
                 }
 
             } else {
@@ -84,8 +86,6 @@ class Auth extends CI_Controller {
         $this->form_validation->set_rules('jns_klmn', 'Jenis Kelamin', 'required|trim');
         $this->form_validation->set_rules('status', 'Status', 'required|trim');
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
-        $this->form_validation->set_rules('tamat_pangkat', 'Tamat Pangkat', 'required|trim');
-        $this->form_validation->set_rules('tamat_jabatan', 'Tamat Jabatan', 'required|trim');
         $this->form_validation->set_rules('agama', 'Agama', 'required|trim');
         $this->form_validation->set_rules('telepon', 'Telepon', 'required|trim');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
