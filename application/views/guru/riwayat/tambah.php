@@ -22,7 +22,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="tamat">Tamat</label>
-                                                    <input type="date" class="form-control" id="tamat" placeholder="tamat" name="tamat" autocomplete="off" value="<?= set_value('tamat'); ?>">
+                                                    <input class="form-control datepicker" id="tamat" placeholder="tamat" name="tamat" autocomplete="off" value="<?= set_value('tamat'); ?>">
                                                     <?= form_error('tamat','<small class="text-danger">','</small>'); ?>
                                                 </div>
                                                 <div class="form-group">
@@ -58,7 +58,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="tanggal">Tanggal SK</label>
-                                                    <input type="date" class="form-control" id="tanggal" placeholder="Tanggal SK" name="tanggal" autocomplete="off" value="<?= set_value('tanggal'); ?>">
+                                                    <input class="form-control datepicker" id="tanggal" placeholder="Tanggal SK" name="tanggal" autocomplete="off" value="<?= set_value('tanggal'); ?>">
                                                     <?= form_error('tanggal','<small class="text-danger">','</small>'); ?>
                                                 </div>
                                                 <button type="submit" name="simpan" class="btn btn-primary">Save</button>

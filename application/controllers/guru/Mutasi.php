@@ -103,11 +103,11 @@ class Mutasi extends CI_Controller {
         {
             
             $data = [
-                'tamat_pangkat' => $this->input->post('tamat_pangkat', true),
+                'tamat_pangkat' => tanggal_en($this->input->post('tamat_pangkat', true)),
                 'gaji_pokok' => $this->input->post('gaji_pokok', true),
                 'surat_keputusan_pejabat' => $this->input->post('surat_keputusan_pejabat', true),
                 'nomor_keputusan' => $this->input->post('nomor_keputusan', true),
-                'tanggal_keputusan' => $this->input->post('tanggal_keputusan', true),
+                'tanggal_keputusan' => tanggal_en($this->input->post('tanggal_keputusan', true)),
                 'tempat_mutasi' => $this->input->post('tempat_mutasi', true),
                 'guru_id' => $this->session->userdata('id')
             ];

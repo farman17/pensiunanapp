@@ -12,12 +12,12 @@
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/horizontal-layout/style.css">
   <link href="<?= base_url(); ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/css/vendor.bundle.addons.css">
   <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/logo.png" />
 
   <!-- Custom styles for this page -->
   <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/datepicker/css/bootstrap-datepicker.css">
 
 </head>
 
@@ -58,7 +58,7 @@
     </div>
 
     <!-- Isi konten -->
-    <div class="container-fluid page-body-wrapper">
+    <div class="page-body-wrapper">
         <div class="main-panel" style="background-image: url(http://localhost/pengajuan/assets/img/1.jpg)">
         <div class="content-wrapper d-flex" style="margin-left: 350px;">
             <div class="card">
@@ -75,7 +75,7 @@
                                     <form method="post" action="">
                                         <div class="form-group">
                                             <label for="nip_lama">NIP Lama</label>
-                                            <input type="number" class="form-control" id="nip_lama" placeholder="NIP Lama" name="nip_lama" autocomplete="off" value="<?= set_value('nip_lama'); ?>">
+                                            <input type="text" class="form-control" id="nip_lama" placeholder="NIP Lama" name="nip_lama" autocomplete="off" value="<?= set_value('nip_lama'); ?>">
                                             <?= form_error('nip_lama','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">
@@ -99,9 +99,10 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="tgl_lahir">Tanggal Lahir</label>
-                                                    <input type="date" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir" autocomplete="off" value="<?= set_value('tgl_lahir'); ?>">
+                                                    <input class="form-control datepicker" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir" autocomplete="off" value="<?= set_value('tgl_lahir'); ?>">
                                                     <?= form_error('tgl_lahir','<small class="text-danger">','</small>'); ?>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -150,16 +151,6 @@
                                                 <?php endforeach; ?>
                                             </select>
                                             <small class="form-text text-danger"><?= form_error('jabatan') ?></small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tamat_pangkat">Tamat Pangkat</label>
-                                            <input type="date" class="form-control" id="tamat_pangkat" placeholder="Tamat Pangkat" name="tamat_pangkat" autocomplete="off" value="<?= set_value('tamat_pangkat'); ?>">
-                                            <?= form_error('tamat_pangkat','<small class="text-danger">','</small>'); ?>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tamat_jabatan">Tamat Jabatan</label>
-                                            <input type="date" class="form-control" id="tamat_jabatan" placeholder="Tamat Jabatan" name="tamat_jabatan" autocomplete="off" value="<?= set_value('tamat_jabatan'); ?>">
-                                            <?= form_error('tamat_jabatan','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="agama">Agama</label>
@@ -245,19 +236,17 @@
   <script src="<?= base_url(); ?>assets/vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="<?= base_url(); ?>assets/js/demo/datatables-demo.js"></script>
+  <script src="<?= base_url(); ?>assets/datepicker/js/bootstrap-datepicker.min.js"></script>
 
-  <script>
-      $('.gambar').on('change', function(){
-          let fileName = $(this).val().split('\\').pop();
-
-          if( fileName ){
-              document.getElementById('form1').submit();
-          }
-
-      });
-  </script>
+    <script type="text/javascript">
+    $(function(){
+    $(".datepicker").datepicker({
+        format: 'dd-mm-yyyy',
+        autoclose: true,
+        todayHighlight: true,
+    });
+    });
+    </script>
 
 
 </body>

@@ -26,7 +26,7 @@
                                     <form method="post" action="">
                                         <div class="form-group">
                                             <label for="tamat_pangkat">Tamat Pangkat</label>
-                                            <input type="date" class="form-control" id="tamat_pangkat" placeholder="Tamat Pangkat" name="tamat_pangkat" autocomplete="off" value="<?= set_value('tamat_pangkat') ? set_value('tamat_pangkat') : $mutasi['tamat_pangkat']; ?>">
+                                            <input class="form-control datepicker" id="tamat_pangkat" placeholder="Tamat Pangkat" name="tamat_pangkat" autocomplete="off" value="<?= set_value('tamat_pangkat') ? set_value('tamat_pangkat') : tanggal_id($mutasi['tamat_pangkat']); ?>">
                                             <?= form_error('tamat_pangkat','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">
@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="tanggal_keputusan">Tanggal Keputusan</label>
-                                            <input type="date" class="form-control" id="tanggal_keputusan" placeholder="Nomor Keputusan" name="tanggal_keputusan" autocomplete="off" value="<?= set_value('tanggal_keputusan') ? set_value('tanggal_keputusan') : $mutasi['tanggal_keputusan']; ?>">
+                                            <input class="form-control datepicker" id="tanggal_keputusan" placeholder="Nomor Keputusan" name="tanggal_keputusan" autocomplete="off" value="<?= set_value('tanggal_keputusan') ? set_value('tanggal_keputusan') : tanggal_id($mutasi['tanggal_keputusan']); ?>">
                                             <?= form_error('tanggal_keputusan','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">

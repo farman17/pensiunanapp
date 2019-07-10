@@ -21,9 +21,7 @@
                                             
                                             <?php $jabatan = $this->db->get_where('jabatan',['id' => $guru->jabatan_id])->row(); ?>
                                             Pangkat : <?= $jabatan->pangkat ?> / <?= $jabatan->gol_ruang ?> <br>
-                                            Tamat Pangkat : <?= $guru->tamat_pangkat ?> <br>
                                             Jabatan : <?= $jabatan->nama ?> <br>
-                                            Tamat Jabatan : <?= $guru->tamat_jabatan ?> <br>
                                             Agama : <?= $guru->agama ?> <br>
                                             Telepon : <?= $guru->telepon ?> <br>
                                             Alamat : <?= $guru->alamat ?> <br>

@@ -31,8 +31,8 @@ class Guru extends CI_Controller {
         $data['jabatan'] = $this->Jabatan_model->getAll();
         $data['agama'] = ['Islam','Kristen','Katolik','Hindu','Budha','Konghucu'];
         
-        $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|trim|min_length[12]|max_length[12]');
-        $this->form_validation->set_rules('nip', 'NIP', 'required|trim|min_length[12]|max_length[12]|is_unique[guru.nip]',[
+        $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|numeric|trim|min_length[12]|max_length[12]');
+        $this->form_validation->set_rules('nip', 'NIP', 'required|numeric|trim|min_length[12]|max_length[12]|is_unique[guru.nip]',[
             'is_unique' => 'NIP sudah terdaftar',
         ]);
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -41,8 +41,6 @@ class Guru extends CI_Controller {
         $this->form_validation->set_rules('jns_klmn', 'Jenis Kelamin', 'required|trim');
         $this->form_validation->set_rules('status', 'Status', 'required|trim');
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
-        $this->form_validation->set_rules('tamat_pangkat', 'Tamat Pangkat', 'required|trim');
-        $this->form_validation->set_rules('tamat_jabatan', 'Tamat Jabatan', 'required|trim');
         $this->form_validation->set_rules('agama', 'Agama', 'required|trim');
         $this->form_validation->set_rules('telepon', 'Telepon', 'required|trim');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
@@ -71,16 +69,14 @@ class Guru extends CI_Controller {
         $data['jabatan'] = $this->Jabatan_model->getAll();
         $data['agama'] = ['Islam','Kristen','Katolik','Hindu','Budha','Konghucu'];
         
-        $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|trim|min_length[12]|max_length[12]');
-        $this->form_validation->set_rules('nip', 'nip', 'required|trim|min_length[12]|max_length[12]');
+        $this->form_validation->set_rules('nip_lama', 'NIP Lama', 'required|numeric|trim|min_length[12]|max_length[12]');
+        $this->form_validation->set_rules('nip', 'nip', 'required|numeric|trim|min_length[12]|max_length[12]');
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('tmp_lahir', 'Tempat Lahir', 'required|trim');
         $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|trim');
         $this->form_validation->set_rules('jns_klmn', 'Jenis Kelamin', 'required|trim');
         $this->form_validation->set_rules('status', 'Status', 'required|trim');
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
-        $this->form_validation->set_rules('tamat_pangkat', 'Tamat Pangkat', 'required|trim');
-        $this->form_validation->set_rules('tamat_jabatan', 'Tamat Jabatan', 'required|trim');
         $this->form_validation->set_rules('agama', 'Agama', 'required|trim');
         $this->form_validation->set_rules('telepon', 'Telepon', 'required|trim');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');

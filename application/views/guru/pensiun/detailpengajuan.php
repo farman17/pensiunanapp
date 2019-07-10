@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="mksd">Masa Kerja Sebelum Diangkat</label>
-                                            <input type="date" class="form-control" id="mksd" placeholder="dd/mm/yyyy" name="mksd" autocomplete="off" value="<?= set_value('mksd') ? set_value('mksd') : $pengajuan['mksd']; ?>">
+                                            <input class="form-control datepicker" id="mksd"  name="mksd" autocomplete="off" value="<?= set_value('mksd') ? set_value('mksd') : tanggal_id($pengajuan['mksd']); ?>">
                                             <?= form_error('mksd','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">
@@ -55,17 +55,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="mulai_masuk_pns">Mulai masuk PNS</label>
-                                            <input type="date" class="form-control" id="mulai_masuk_pns" placeholder="Mulai masuk PNS" name="mulai_masuk_pns" autocomplete="off" value="<?= set_value('mulai_masuk_pns') ? set_value('mulai_masuk_pns') : $pengajuan['mulai_masuk_pns']; ?>">
+                                            <input class="form-control datepicker" id="mulai_masuk_pns" placeholder="Mulai masuk PNS" name="mulai_masuk_pns" autocomplete="off" value="<?= set_value('mulai_masuk_pns') ? set_value('mulai_masuk_pns') : tanggal_id($pengajuan['mulai_masuk_pns']); ?>">
                                             <?= form_error('mulai_masuk_pns','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="tamat_pangkat">Tamat Pangkat</label>
-                                            <input type="date" class="form-control" id="tamat_pangkat" placeholder="Tamat Pangkat" name="tamat_pangkat" autocomplete="off" value="<?= set_value('tamat_pangkat') ? set_value('tamat_pangkat') : $pengajuan['tamat_pangkat']; ?>">
+                                            <input class="form-control datepicker" id="tamat_pangkat" placeholder="Tamat Pangkat" name="tamat_pangkat" autocomplete="off" value="<?= set_value('tamat_pangkat') ? set_value('tamat_pangkat') : $pengajuan['tamat_pangkat']; ?>">
                                             <?= form_error('tamat_pangkat','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="tamat_jabatan">Tamat Jabatan</label>
-                                            <input type="date" class="form-control" id="tamat_jabatan" placeholder="Tamat Jabatan" name="tamat_jabatan" autocomplete="off" value="<?= set_value('tamat_jabatan') ? set_value('tamat_jabatan') : $pengajuan['tamat_jabatan']; ?>">
+                                            <input class="form-control datepicker" id="tamat_jabatan" placeholder="Tamat Jabatan" name="tamat_jabatan" autocomplete="off" value="<?= set_value('tamat_jabatan') ? set_value('tamat_jabatan') : $pengajuan['tamat_jabatan']; ?>">
                                             <?= form_error('tamat_jabatan','<small class="text-danger">','</small>'); ?>
                                         </div>
                                         <div class="form-group">

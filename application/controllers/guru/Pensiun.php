@@ -120,12 +120,12 @@ class Pensiun extends CI_Controller {
             $data = [
                 'nomor_karpeg' => $this->input->post('nomor_karpeg', true),
                 'gaji_pokok_terakhir' => $this->input->post('gaji_pokok_terakhir', true),
-                'mksd' => $this->input->post('mksd', true),
+                'mksd' => tanggal_en($this->input->post('mksd', true)),
                 'pspp' => $this->input->post('pspp', true),
-                'mulai_masuk_pns' => $this->input->post('mulai_masuk_pns', true),
+                'mulai_masuk_pns' => tanggal_en($this->input->post('mulai_masuk_pns', true)),
                 'alamat' => $this->input->post('alamat', true),
-                'tamat_pangkat' => $this->input->post('tamat_pangkat', true),
-                'tamat_jabatan' => $this->input->post('tamat_jabatan', true),
+                'tamat_pangkat' => tanggal_en($this->input->post('tamat_pangkat', true)),
+                'tamat_jabatan' => tanggal_en($this->input->post('tamat_jabatan', true)),
                 'keterangan' => $this->input->post('keterangan', true),
                 'guru_id' => $this->session->userdata('id')
             ];

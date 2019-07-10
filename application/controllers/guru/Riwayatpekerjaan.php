@@ -34,12 +34,12 @@ class Riwayatpekerjaan extends CI_Controller {
         {
             $data = [
                 'uraian' => $this->input->post('uraian', true),
-                'tamat' => $this->input->post('tamat', true),
+                'tamat' => tanggal_en($this->input->post('tamat', true)),
                 'jabatan_id' => $this->input->post('pangkat', true),
                 'gaji_pokok' => $this->input->post('gaji_pokok', true),
                 'pejabat' => $this->input->post('pejabat', true),
                 'nomor' => $this->input->post('nomor', true),
-                'tanggal' => $this->input->post('tanggal', true),
+                'tanggal' => tanggal_en($this->input->post('tanggal', true)),
                 'guru_id' => $this->session->userdata('id'),
             ];
             
@@ -71,12 +71,12 @@ class Riwayatpekerjaan extends CI_Controller {
         {
             $data = [
                 'uraian' => $this->input->post('uraian', true),
-                'tamat' => $this->input->post('tamat', true),
+                'tamat' => tanggal_en($this->input->post('tamat', true)),
                 'jabatan_id' => $this->input->post('pangkat', true),
                 'gaji_pokok' => $this->input->post('gaji_pokok', true),
                 'pejabat' => $this->input->post('pejabat', true),
                 'nomor' => $this->input->post('nomor', true),
-                'tanggal' => $this->input->post('tanggal', true),
+                'tanggal' => tanggal_en($this->input->post('tanggal', true)),
                 'guru_id' => $this->session->userdata('id'),
             ];
             

@@ -1,4 +1,4 @@
-<div class="container-fluid page-body-wrapper">
+<div class=" page-body-wrapper">
     <div class="main-panel" style="background-image: url(http://localhost/pengajuan/assets/img/1.jpg)">
         <div class="content-wrapper">
             <div class="card">
@@ -42,7 +42,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="tgl_lahir">Tanggal Lahir</label>
-                                                            <input type="date" class="form-control" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir" autocomplete="off" value="<?= set_value('tgl_lahir') ? set_value('tgl_lahir') : $guru->tgl_lahir; ?>">
+                                                            <input class="form-control datepicker" id="tgl_lahir" placeholder="Tanggal Lahir" name="tgl_lahir" autocomplete="off" value="<?= set_value('tgl_lahir') ? set_value('tgl_lahir') : tanggal_id($guru->tgl_lahir); ?>">
                                                             <?= form_error('tgl_lahir','<small class="text-danger">','</small>'); ?>
                                                         </div>
                                                     </div>
@@ -92,16 +92,6 @@
                                                         <?php endforeach; ?>
                                                     </select>
                                                     <small class="form-text text-danger"><?= form_error('jabatan') ?></small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="tamat_pangkat">Tamat Pangkat</label>
-                                                    <input type="date" class="form-control" id="tamat_pangkat" placeholder="Tamat Pangkat" name="tamat_pangkat" autocomplete="off" value="<?= set_value('tamat_pangkat') ? set_value('tamat_pangkat') : $guru->tamat_pangkat; ?>">
-                                                    <?= form_error('tamat_pangkat','<small class="text-danger">','</small>'); ?>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="tamat_jabatan">Tamat Jabatan</label>
-                                                    <input type="date" class="form-control" id="tamat_jabatan" placeholder="Tamat Jabatan" name="tamat_jabatan" autocomplete="off" value="<?= set_value('tamat_jabatan') ? set_value('tamat_jabatan') : $guru->tamat_jabatan; ?>">
-                                                    <?= form_error('tamat_jabatan','<small class="text-danger">','</small>'); ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="agama">Agama</label>
