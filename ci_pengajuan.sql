@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 06, 2019 at 08:54 AM
+-- Generation Time: Jul 10, 2019 at 03:52 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -33,20 +33,9 @@ CREATE TABLE `file` (
   `judul` varchar(100) NOT NULL,
   `file` varchar(100) NOT NULL,
   `status` int(11) NOT NULL,
+  `jenis` int(11) NOT NULL,
   `guru_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `file`
---
-
-INSERT INTO `file` (`id`, `judul`, `file`, `status`, `guru_id`) VALUES
-(56, 'surat pengantar', '', 0, 2),
-(57, 'surat permohonan', '', 0, 2),
-(58, 'Surat bersedia melepas/lolos dari sekolah yang akan ditinggalkan, dilampiri tabel kelebihan dan keku', '', 0, 2),
-(59, 'Surat bersedia menerima/butuh dari sekolah yang dituju ditabel kelebihan dan kekurangan guru', '', 0, 2),
-(60, 'sk pangkat terakhir', '', 0, 2),
-(61, 'foto sertivikat pendidik', '', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -71,8 +60,6 @@ CREATE TABLE `guru` (
   `pendidikan_terakhir` varchar(45) DEFAULT NULL,
   `th_lulus` varchar(45) DEFAULT NULL,
   `kecamatan` varchar(45) DEFAULT NULL,
-  `tamat_pangkat` varchar(45) DEFAULT NULL,
-  `tamat_jabatan` varchar(45) DEFAULT NULL,
   `jabatan_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -80,10 +67,10 @@ CREATE TABLE `guru` (
 -- Dumping data for table `guru`
 --
 
-INSERT INTO `guru` (`id`, `nip_lama`, `nip`, `nama`, `tmp_lahir`, `tgl_lahir`, `jns_klmn`, `status`, `agama`, `telepon`, `alamat`, `unit_kerja`, `pensiun`, `pendidikan_terakhir`, `th_lulus`, `kecamatan`, `tamat_pangkat`, `tamat_jabatan`, `jabatan_id`) VALUES
-(1, '12345', '12345', 'Icha', 'Banyuwangi', '1999-12-12', 'P', 'PNS', 'Islam', '08112345678', 'Banyuwangi', 'SDN 2 Patok 11', '2020-12-12', 'D3', '2018', 'Gambiran', '2019-12-12', '2019-12-12', 1),
-(2, '12344', '12344', 'Laila majnun', 'Banyuwangi', '1996-12-12', 'P', 'PNS', 'Islam', '0811234567', 'Banyuwangi', 'SMPN 2 Sumberayu', '2019-12-12', 'S1', '2019', 'Muncar', '2022-12-12', '2022-12-12', 1),
-(3, '12345', '12342', 'Handoyo', 'Banyuwangi', '1990-12-01', 'L', 'PNS', 'Islam', '08112345678', 'Patok 11 sumberayu', 'SMP 2 PATOK 11', '1970-01-01', 'S1', '2003', 'Muncar', '2023-12-12', '2023-12-12', 1);
+INSERT INTO `guru` (`id`, `nip_lama`, `nip`, `nama`, `tmp_lahir`, `tgl_lahir`, `jns_klmn`, `status`, `agama`, `telepon`, `alamat`, `unit_kerja`, `pensiun`, `pendidikan_terakhir`, `th_lulus`, `kecamatan`, `jabatan_id`) VALUES
+(1, '12345', '12345', 'Icha', 'Banyuwangi', '1999-12-12', 'P', 'PNS', 'Islam', '08112345678', 'Banyuwangi', 'SDN 2 Patok 11', '2020-12-12', 'D3', '2018', 'Gambiran', 1),
+(2, '12344', '12344', 'Laila majnun', 'Banyuwangi', '1996-12-12', 'P', 'PNS', 'Islam', '0811234567', 'Banyuwangi', 'SMPN 2 Sumberayu', '2019-12-12', 'S1', '2019', 'Muncar', 1),
+(3, '12345', '12342', 'Handoyo', 'Banyuwangi', '1990-12-01', 'L', 'PNS', 'Islam', '08112345678', 'Patok 11 sumberayu', 'SMP 2 PATOK 11', '1970-01-01', 'S1', '2003', 'Muncar', 1);
 
 -- --------------------------------------------------------
 
@@ -130,31 +117,63 @@ CREATE TABLE `keluarga` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mutasi`
+--
+
+CREATE TABLE `mutasi` (
+  `id` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `tamat_pangkat` date NOT NULL,
+  `gaji_pokok` double NOT NULL,
+  `surat_keputusan_pejabat` varchar(200) NOT NULL,
+  `nomor_keputusan` varchar(200) NOT NULL,
+  `tanggal_keputusan` date NOT NULL,
+  `tempat_mutasi` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL,
+  `pengembalian_inventaris` int(11) NOT NULL,
+  `guru_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pengajuan`
 --
 
 CREATE TABLE `pengajuan` (
   `id` int(11) NOT NULL,
-  `nomor_karpeg` int(11) NOT NULL,
+  `nomor_karpeg` varchar(20) NOT NULL,
   `gaji_pokok_terakhir` double NOT NULL,
   `mksd` date NOT NULL,
   `pspp` varchar(150) NOT NULL,
   `mulai_masuk_pns` date NOT NULL,
-  `alamat` text NOT NULL,
+  `tamat_pangkat` date NOT NULL,
+  `tamat_jabatan` date NOT NULL,
   `gaji_pokok` double NOT NULL,
+  `alamat` text NOT NULL,
   `pengembalian_inventaris` int(11) NOT NULL,
   `status` int(11) NOT NULL,
-  `jenis` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
   `guru_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `pengajuan`
+-- Table structure for table `riwayat_pekerjaan`
 --
 
-INSERT INTO `pengajuan` (`id`, `nomor_karpeg`, `gaji_pokok_terakhir`, `mksd`, `pspp`, `mulai_masuk_pns`, `alamat`, `gaji_pokok`, `pengembalian_inventaris`, `status`, `jenis`, `keterangan`, `guru_id`) VALUES
-(2, 0, 3000000, '2019-07-10', 's1', '2010-06-15', 'jl. wahid hasim, genteng banyuwangi', 3000000, 0, 0, 'mutasi', 'pensiun', 2);
+CREATE TABLE `riwayat_pekerjaan` (
+  `id` int(11) NOT NULL,
+  `uraian` varchar(200) NOT NULL,
+  `tamat` date NOT NULL,
+  `jabatan_id` int(11) NOT NULL,
+  `gaji_pokok` double NOT NULL,
+  `pejabat` varchar(100) NOT NULL,
+  `nomor` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL,
+  `guru_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -174,7 +193,8 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (`id`, `nama`, `link`) VALUES
 (1, 'Admin', 'admin'),
-(2, 'Guru', 'guru');
+(2, 'Guru', 'guru'),
+(3, 'Kepala dinas', 'pimpinan');
 
 -- --------------------------------------------------------
 
@@ -201,8 +221,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `guru_id`, `nama`, `username`, `password`, `role_id`, `is_active`, `gambar`, `date_created`) VALUES
 (4, 1, 'Icha', 'icha', '$2y$10$zDaihdR.vsrQIG7rlpP8IeGNGn24GCXm/bO68nHwLpuR/oF1iSxJu', 1, 1, 'avatar.jpg', 1552637403),
 (5, 2, 'laila', '12344', '$2y$10$rzBJHKOdeDy4x7HZ8D/CuueEq70GT5hZrSW5TsrmksV9S.9M4rdGG', 2, 1, 'avatar.jpg', 1555054422),
-(6, 3, 'Handoyo', '12345', '$2y$10$E6ZrzTRw71YGoWpped0pKuIWS9Y.eeV3mXjqTgQz.nWeO32om7/.6', 2, 1, 'avatar.jpg', 1555936547),
-(8, 6, 'sfdfds', '3243324', '$2y$10$eKOXmZD8S/vWprh8tx4CDuTiHjJJTxiqsmb98UU3.Eeq1DlY/oomW', 2, 1, 'avatar.jpg', 1557788473);
+(6, 3, 'Handoyo', '12345', '$2y$10$E6ZrzTRw71YGoWpped0pKuIWS9Y.eeV3mXjqTgQz.nWeO32om7/.6', 3, 1, 'avatar.jpg', 1555936547);
 
 --
 -- Indexes for dumped tables
@@ -233,9 +252,21 @@ ALTER TABLE `keluarga`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mutasi`
+--
+ALTER TABLE `mutasi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `riwayat_pekerjaan`
+--
+ALTER TABLE `riwayat_pekerjaan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -258,13 +289,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `file`
 --
 ALTER TABLE `file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
 
 --
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jabatan`
@@ -276,25 +307,37 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `keluarga`
 --
 ALTER TABLE `keluarga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `mutasi`
+--
+ALTER TABLE `mutasi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `riwayat_pekerjaan`
+--
+ALTER TABLE `riwayat_pekerjaan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
