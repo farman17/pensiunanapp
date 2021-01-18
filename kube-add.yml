@@ -29,8 +29,8 @@ spec:
       containers:
       - name: php-vet
         image: farman17/aplikasi-pensiunmutasi
-				ports:
-          - containerPort: 80
+	ports:
+        - containerPort: 80
        
 
 ---
