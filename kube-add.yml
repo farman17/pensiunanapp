@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: ve-service
+  name: v-service
   namespace: production
 spec:
   ports:
@@ -9,35 +9,35 @@ spec:
     protocol: TCP
   #type: LoadBalancer
   selector:
-    app: vet
+    app: ve
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ve-deploy
+  name: v-deploy
   namespace: production
 spec:
   selector:
     matchLabels:
-      app: vet
+      app: ve
   replicas: 2
   template:
     metadata:
       labels:
-        app: vet
+        app: ve
     spec:
       containers:
-      - name: php-vet
+      - name: php-v
         image: farman17/aplikasi-pensiunmutasi
-	ports:
-        - containerPort: 80
-       
+        ports:
+          - containerPort: 80
+   
 
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ve-ingress
+  name: v-ingress
   namespace: production
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -48,6 +48,6 @@ spec:
       paths:
       #- path: /
       - backend:
-          serviceName: ve-service
+          serviceName: v-service
           servicePort: 80
 
