@@ -25,7 +25,7 @@ spec:
     metadata:
       labels:
         app: pens
-	spec:
+spec:
       containers:
       - name: php-pensiun
         image: farman17/aplikasi-pensiunmutasi
