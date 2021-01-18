@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: sosmed-service
+  name: pensiun-service
   namespace: production
 spec:
   ports:
@@ -9,26 +9,26 @@ spec:
     protocol: TCP
   #type: LoadBalancer
   selector:
-    app: sosmed
+    app: pens
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sosmed
+  name: pensiun-deploy
   namespace: production
 spec:
   selector:
     matchLabels:
-      app: sosmed
+      app: pens
   replicas: 2
   template:
     metadata:
       labels:
-        app: sosmed
-    spec:
+        app: pens
+				spec:
       containers:
-      - name: php-pesbuk
-        image: farman17/booking-hotel
+      - name: php-pensiun
+        image: farman17/aplikasi-pensiunmutasi
         ports:
           - containerPort: 80
        
@@ -37,17 +37,17 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: sosmed-ingress
+  name: pensiun-ingress
   namespace: production
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: landing.dailybugis.my.id
+  - host: pensiunan.dailybugis.my.id
     http:
       paths:
       #- path: /
       - backend:
-          serviceName: sosmed-service
+          serviceName: pensiun-service
           servicePort: 80
 
